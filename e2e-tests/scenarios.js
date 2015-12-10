@@ -27,7 +27,7 @@ describe('Jewellry app', function() {
 
     it('should render home when user navigates to /home', function() {
       expect(element.all(by.css('.panel-heading')).first().getText()).
-        toMatch(/RED FRIDAY DEAL/);
+        toMatch(/BUILD YOUR OWN PENDANT/);
     });
 
   });
