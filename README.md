@@ -1,2 +1,2 @@
 # henry_jewellry
-Demo application that integrates angularJS and spring for self learning.
+This is a Demo application that integrates angularJS and spring for self learning.
