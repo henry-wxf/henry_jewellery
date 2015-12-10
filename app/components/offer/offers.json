@@ -1,0 +1,50 @@
+[
+    {
+        "offer_id":1001,
+        "caption":"BUILD YOUR OWN PENDANT",
+        "image_url":"components/offer/img/1001.jpg",
+        "promotion":"Unmatched diamond selection makes classic diamond pendants anything but ordinary."
+    },
+    {
+        "offer_id":1002,
+        "caption":"BUILD YOUR OWN RING",
+        "image_url":"components/offer/img/1002.jpg",
+        "promotion":"Uniquely designed engagement rings custom crafted with certified diamonds."
+    },
+    {
+        "offer_id":1003,
+        "caption":"BUILD YOUR OWN EARRINGS",
+        "image_url":"components/offer/img/1003.jpg",
+        "promotion":"Make a big impression with perfectly matched diamonds in timeless custom earrings."
+    },
+    {
+        "offer_id":1004,
+        "caption":"RED FRIDAY DEAL",
+        "image_url":"components/offer/img/1004.jpg",
+        "promotion":"Buy 50 mobiles and get a gift card"
+    },
+    {
+        "offer_id":1005,
+        "caption":"RED FRIDAY DEAL",
+        "image_url":"components/offer/img/1005.jpg",
+        "promotion":"Buy 50 mobiles and get a gift card"
+    },
+    {
+        "offer_id":1006,
+        "caption":"RED FRIDAY DEAL",
+        "image_url":"components/offer/img/1006.jpg",
+        "promotion":"Buy 50 mobiles and get a gift card"
+    },
+    {
+        "offer_id":1007,
+        "caption":"RED FRIDAY DEAL",
+        "image_url":"components/offer/img/1007.jpg",
+        "promotion":"Buy 50 mobiles and get a gift card"
+    },
+    {
+        "offer_id":1008,
+        "caption":"RED FRIDAY DEAL",
+        "image_url":"components/offer/img/1008.jpg",
+        "promotion":"Buy 50 mobiles and get a gift card"
+    }
+]

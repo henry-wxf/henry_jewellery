@@ -1,0 +1,12 @@
+
+<div class="container">
+  <div class="row" ng-repeat="offer_group in offers|chunkBy:3">
+    <div class="col-sm-4" ng-repeat="offer in offer_group">
+      <div class="panel panel-primary">
+        <div class="panel-heading">{{offer.caption}}</div>
+        <div class="panel-body"><img ng-src="{{offer.image_url}}" class="img-responsive" style="width:100%" alt="Image"/></div>
+        <div class="panel-footer">{{offer.promotion}}</div>
+      </div>
+    </div>
+  </div>
+</div>
