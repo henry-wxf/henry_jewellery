@@ -37,7 +37,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" ng-controller="NavCtrl">
       <ul class="nav navbar-nav">
-        <li ng-class="{active: activeLink=='home'}"><a href="#/home" ng-click="changeLink('home')">Home</a></li>
+        <li ng-class="{active: activeLink=='home'}"><a href="#/home" ng-click="changeLink('home')">Special</a></li>
         <li ng-class="{active: activeLink=='product'}"><a href="#/product" ng-click="changeLink('product')">Products</a></li>
         <li ng-class="{active: activeLink=='deal'}"><a href="#/deal" ng-click="changeLink('deal')">Deals</a></li>
       </ul>
@@ -48,7 +48,6 @@
     </div>
   </div>
 </nav>
-
 <div class="view-container">
   <div ng-view></div>
 </div>

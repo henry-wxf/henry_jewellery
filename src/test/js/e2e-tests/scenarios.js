@@ -1,7 +1,5 @@
 'use strict';
 
-/* https://github.com/angular/protractor/blob/master/docs/toc.md */
-
 describe('Jewellry app', function() {
 
 
@@ -12,7 +10,7 @@ describe('Jewellry app', function() {
 
   it('should show active class after clicking a navigation link', function(){
     browser.get('index.html');
-    expect(element(by.css(".active")).element(by.css("a")).getText()).toBe("Home");
+    expect(element(by.css(".active")).element(by.css("a")).getText()).toBe("Special");
 
     element(by.css('a[href="#/deal"]')).click();
     expect(element(by.css(".active")).element(by.css("a")).getText()).toBe("Deals");
@@ -31,34 +29,4 @@ describe('Jewellry app', function() {
     });
 
   });
-/*
-  describe('view1', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/view1');
-    });
-
-
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
-    });
-
-  });
-
-
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/view2');
-    });
-
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
-    });
-
-  });
-*/
 });
