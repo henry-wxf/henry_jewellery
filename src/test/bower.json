@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "name": "henry_jewellry",
+  "private": true,
+  "version": "0.0.1-SNAPSHOT",
+  "description": "Demo application for learing angular and spring",
   "license": "MIT",
   "private": true,
   "dependencies": {
