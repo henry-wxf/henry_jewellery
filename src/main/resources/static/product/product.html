@@ -1,20 +1,22 @@
-<div class="container-fluid bg-3 text-center">    
-  <div class="row">
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Some text..</p>
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Some text..</p>
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+<div class="container-fluid bg-3">
+  <div class="row" ng-repeat="product_group in products|chunkBy:4">
+    <div class="col-sm-3" ng-repeat="product in product_group">
+        <div class="panel panel-primary">
+          <div class="panel-heading">{{product.description}}</div>
+          <div class="panel-body">
+            <img ng-src="{{product.imgUrl}}" class="img-responsive" style="width:100%" alt="{{product.name}}">
+          </div>
+          <div class="panel-footer">
+            <div class="row">
+                <div class="col-sm-6">{{product.price|currency}}</div>
+                <div class="col-sm-6 text-right">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
-</div><br><br>
+</div>

@@ -1,9 +1,9 @@
 {
-  "name": "henry_jewellry",
+  "name": "henry_jewellery",
   "private": true,
   "version": "0.0.1-SNAPSHOT",
   "description": "Demo application for learing angular and spring",
-  "repository": "https://github.com/henry-wxf/henry_jewellry",
+  "repository": "https://github.com/henry-wxf/henry_jewellery",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.3.1",
@@ -24,14 +24,14 @@
     "start": "http-server -a localhost -p 8000 -c-1",
 
     "pretest": "npm install",
-    "test": "karma start karma.conf.js",
-    "test-single-run": "karma start karma.conf.js  --single-run",
+    "test": "karma start test/js/unit/karma.conf.js",
+    "test-single-run": "karma start test/js/unit/karma.conf.js  --single-run",
 
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
 
     "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor js/e2e-tests/protractor.conf.js",
+    "protractor": "protractor test/js/e2e-tests/protractor.conf.js",
 
     "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
   }

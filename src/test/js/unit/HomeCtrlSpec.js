@@ -11,7 +11,7 @@ describe('Home module unit tests', function(){
   });
 
 
-  beforeEach(module('jewellry.home'));
+  beforeEach(module('jewellery.home'));
 
   describe('HomeCtrl', function(){
     var scope, ctrl, $httpBackend;

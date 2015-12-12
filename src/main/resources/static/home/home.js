@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jewellry.home', ['ngRoute', 'angular.filter', 'offerService'])
+angular.module('jewellery.home', ['ngRoute', 'angular.filter', 'offerService'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {

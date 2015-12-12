@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('jewellry.deal', ['ngRoute'])
+angular.module('jewellery.deal', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/deal', {
+  $routeProvider.when('/deals', {
     templateUrl: 'deal/deal.html',
     controller: 'DealCtrl'
   });

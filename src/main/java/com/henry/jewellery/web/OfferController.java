@@ -31,9 +31,4 @@ public class OfferController {
   public Offer getOffer(@PathVariable String offerId) {
       return repository.findOne(offerId);
   }
-
-    @RequestMapping("/test")
-    public String test(){
-        return "string from server";
-    }
 }

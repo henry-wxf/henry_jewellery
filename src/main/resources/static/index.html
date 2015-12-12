@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="jewellry">
+<html lang="en" ng-app="jewellery">
 <head>
-  <title>Henry Jewellry</title>
+  <title>Henry Jewellery</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="app.css"/>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -15,17 +17,16 @@
   <script src="product/product.js"></script>
   <script src="deal/deal.js"></script>
   <script src="components/offer/offer_service.js"></script>
+  <script src="components/product/product_service.js"></script>
 </head>
 <body>
-
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>Henry Jewellry</h1>
+    <h1>Henry Jewellery</h1>
     <p>make you different</p>
   </div>
 </div>
-
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse" data-spy="affix"  data-offset="160">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -33,13 +34,23 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand"><span class="glyphicon glyphicon-phone-alt"> 0452660594</span></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" ng-controller="NavCtrl">
       <ul class="nav navbar-nav">
-        <li ng-class="{active: activeLink=='home'}"><a href="#/home" ng-click="changeLink('home')">Special</a></li>
-        <li ng-class="{active: activeLink=='product'}"><a href="#/product" ng-click="changeLink('product')">Products</a></li>
-        <li ng-class="{active: activeLink=='deal'}"><a href="#/deal" ng-click="changeLink('deal')">Deals</a></li>
+        <li ng-class="{active: activeMenuItem=='home'}"><a href="#/home" ng-click="changeMenuItem('home')">Special</a></li>
+        <li ng-class="{dropdown: true, active: activeMenuItem=='products'}">
+            <a class="dropdown-toggle" data-toggle="dropdown">Products<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li ng-class="{active: activeSubMenuItem == 'ALL'}">
+                    <a href="#/products" ng-click="changeSubMenuItem('ALL')">ALL</a>
+                </li>
+                <li ng-class="{active: activeSubMenuItem == pType}" ng-repeat="pType in productTypes">
+                    <a href="#/products?type={{pType}}" ng-click="changeSubMenuItem(pType)">{{pType}}</a>
+                </li>
+            </ul>
+        </li>
+        <li ng-class="{active: activeMenuItem=='deals'}"><a href="#/deals" ng-click="changeMenuItem('deals')">Deals</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>

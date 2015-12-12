@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Jewellry app', function() {
+describe('Jewellery app', function() {
 
 
   it('should automatically redirect to /home when location hash/fragment is empty', function() {
@@ -12,11 +12,11 @@ describe('Jewellry app', function() {
     browser.get('index.html');
     expect(element(by.css(".active")).element(by.css("a")).getText()).toBe("Special");
 
-    element(by.css('a[href="#/deal"]')).click();
+    element(by.css('a[href="#/deals"]')).click();
     expect(element(by.css(".active")).element(by.css("a")).getText()).toBe("Deals");
   });
 
-  describe('jewellry.home', function() {
+  describe('jewellery.home', function() {
 
     beforeEach(function() {
       browser.get('index.html#/home');

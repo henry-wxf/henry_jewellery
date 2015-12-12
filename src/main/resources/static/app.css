@@ -4,12 +4,28 @@
 }
 
 /* Remove the jumbotron's default bottom margin */ 
- .jumbotron {
+.jumbotron {
   margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.jumbotron h1{
+  font-family:"Savoye LET", "Arial Black", Gadget, sans-serif;
+  font-weight: bold;
 }
 
 /* Add a gray background color and some padding to the footer */
 footer {
 background-color: #f2f2f2;
   padding: 25px;
+}
+
+.affix {
+  top:0;
+  width: 100%;
+  z-index: 9999 !important;
+}
+.affix + .container-fluid {
+  padding-top: 70px;
 }

@@ -1,5 +1,5 @@
 {
-  "name": "henry_jewellry",
+  "name": "henry_jewellery",
   "private": true,
   "version": "0.0.1-SNAPSHOT",
   "description": "Demo application for learing angular and spring",
@@ -12,7 +12,7 @@
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
     "angular-filter": "0.5.8",
-    "bootstrap": "~3.1.1",
+    "bootstrap": "~3.3.4",
     "html5-boilerplate": "~5.2.0"
   }
 }
