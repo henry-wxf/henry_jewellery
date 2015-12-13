@@ -10,7 +10,7 @@ describe('Jewellery app', function() {
 
   it('should show active class after clicking a navigation link', function(){
     browser.get('index.html');
-    expect(element(by.css("li#home")).element(by.css("a")).getText()).toBe("Special");
+    expect(element(by.css("li#home")).element(by.css("a")).getText()).toBe("Home");
 
     element(by.css('a[href="#/deals"]')).click();
     expect(element(by.css("li#deals")).element(by.css("a")).getText()).toBe("Deals");
