@@ -1,52 +1,66 @@
 package com.henry.jewellery.domain;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Offer {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="offer_id")
     private String offerId;
     
-    private String caption;
+    private String description;
     
-    @Column(name="img_url")
-    private String imgUrl;
+    private BigDecimal price;
     
-    private String promotion;
+    @ManyToOne
+    private Product product;
     
     public Offer(){
         
     }
-    public Offer(String offerId, String caption, String imgUrl, String promotion) {
+
+
+    public Offer(String description, BigDecimal price, Product product) {
         super();
-        this.offerId = offerId;
-        this.caption = caption;
-        this.imgUrl = imgUrl;
-        this.promotion = promotion;
+        this.description = description;
+        this.price = price;
+        this.product = product;
     }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+
+    public Product getProduct() {
+        return product;
+    }
+
 
     public String getOfferId() {
         return offerId;
     }
 
-    public String getCaption() {
-        return caption;
-    }
 
-    public String getImgUrl() {
-        return imgUrl;
-    }
-
-    public String getPromotion() {
-        return promotion;
-    }
     @Override
     public String toString() {
-        return "Offer [offerId=" + offerId + ", caption=" + caption + ", imgUrl="
-                + imgUrl + ", promotion=" + promotion + "]";
+        return "Offer [offerId=" + offerId + ", description=" + description + ", price=" + price + ", product="
+                + product + "]";
     }
+
 
 }

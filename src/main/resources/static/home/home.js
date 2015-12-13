@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jewellery.home', ['ngRoute', 'angular.filter', 'offerService'])
+angular.module('jewellery.home', ['ngRoute', 'angular.filter', 'ui.bootstrap', 'offerService'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {
@@ -11,4 +11,6 @@ angular.module('jewellery.home', ['ngRoute', 'angular.filter', 'offerService'])
 
 .controller('HomeCtrl', ['$scope', 'Offer', function($scope, Offer) {
     $scope.offers = Offer.query();
+    $scope.myInterval = 5000;
+    $scope.noWrapSlides = false;
 }]);

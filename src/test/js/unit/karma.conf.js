@@ -9,8 +9,10 @@ module.exports = function(config){
       'main/resources/static/bower_components/angular-mocks/angular-mocks.js',
       'main/resources/static/bower_components/angular-resource/angular-resource.js',
       'main/resources/static/bower_components/angular-filter/angular-filter.js',
+      'main/resources/static/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'main/resources/static/components/**/*.js',
       'main/resources/static/home/*.js',
+      'main/resources/static/product/*.js',
       'test/js/unit/**/*.js'
     ],
 

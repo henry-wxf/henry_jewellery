@@ -1,12 +1,93 @@
 
 <div class="container">
-  <div class="row" ng-repeat="offer_group in offers|chunkBy:3">
-    <div class="col-sm-4" ng-repeat="offer in offer_group">
-      <div class="panel panel-primary">
-        <div class="panel-heading">{{offer.caption}}</div>
-        <div class="panel-body"><img ng-src="{{offer.imgUrl}}" class="img-responsive" style="width:100%" alt="Image"/></div>
-        <div class="panel-footer">{{offer.promotion}}</div>
+<div class="row">
+  <div class="col-sm-8">
+    <div>
+        <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+          <uib-slide ng-repeat="offer in offers" active="offer.active">
+            <img ng-src="{{offer.product.imgUrl}}" style="margin:auto;">
+            <div class="carousel-caption">
+              <p>{{offer.description}}</p>
+              <h1 class="price_current">{{offer.price|currency}}</h1><span class="price_was"> was {{offer.product.price|currency}}</span>
+            </div>
+          </uib-slide>
+        </uib-carousel>
       </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="well">
+      <p>Some text..</p>
+    </div>
+    <div class="well">
+       <p>Upcoming Events..</p>
+    </div>
+    <div class="well">
+       <p>Visit Our Blog</p>
     </div>
   </div>
 </div>
+<hr>
+</div>
+
+<div class="container text-center">    
+  <h3>What We Do</h3>
+  <br>
+  <div class="row">
+    <div class="col-sm-3">
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Current Project</p>
+    </div>
+    <div class="col-sm-3"> 
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Project 2</p>    
+    </div>
+    <div class="col-sm-3">
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+    </div>  
+  </div>
+  <hr>
+</div>
+
+<div class="container text-center">    
+  <h3>Our Partners</h3>
+  <br>
+  <div class="row">
+    <div class="col-sm-2">
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Partner 1</p>
+    </div>
+    <div class="col-sm-2"> 
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Partner 2</p>    
+    </div>
+    <div class="col-sm-2"> 
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Partner 3</p>
+    </div>
+    <div class="col-sm-2"> 
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Partner 4</p>
+    </div> 
+    <div class="col-sm-2"> 
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Partner 5</p>
+    </div>     
+    <div class="col-sm-2"> 
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Partner 6</p>
+    </div> 
+  </div>
+</div><br>

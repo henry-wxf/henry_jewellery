@@ -28,18 +28,24 @@ public class Product {
     private String imgUrl;
     
     private BigDecimal price;
+    
+    private boolean active;
 
     public Product() {
         super();
     }
 
     public Product(String name, ProductType type, String description, String imgUrl, BigDecimal price) {
+        this(name, type, description, imgUrl, price, true);
+    }
+    public Product(String name, ProductType type, String description, String imgUrl, BigDecimal price, boolean active) {
         super();
         this.name = name;
         this.type = type;
         this.description = description;
         this.imgUrl = imgUrl;
         this.price = price;
+        this.active = active;
     }
 
     public String getProductId() {
@@ -66,10 +72,14 @@ public class Product {
         return type;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
     @Override
     public String toString() {
         return "Product [productId=" + productId + ", name=" + name + ", type=" + type + ", description=" + description
-                + ", imgUrl=" + imgUrl + ", price=" + price + "]";
+                + ", imgUrl=" + imgUrl + ", price=" + price + ", active=" + active + "]";
     }
 
 }

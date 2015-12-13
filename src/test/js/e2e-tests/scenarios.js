@@ -10,10 +10,10 @@ describe('Jewellery app', function() {
 
   it('should show active class after clicking a navigation link', function(){
     browser.get('index.html');
-    expect(element(by.css(".active")).element(by.css("a")).getText()).toBe("Special");
+    expect(element(by.css("li#home")).element(by.css("a")).getText()).toBe("Special");
 
     element(by.css('a[href="#/deals"]')).click();
-    expect(element(by.css(".active")).element(by.css("a")).getText()).toBe("Deals");
+    expect(element(by.css("li#deals")).element(by.css("a")).getText()).toBe("Deals");
   });
 
   describe('jewellery.home', function() {
@@ -24,8 +24,7 @@ describe('Jewellery app', function() {
 
 
     it('should render home when user navigates to /home', function() {
-      expect(element.all(by.css('.panel-heading')).first().getText()).
-        toMatch(/BUILD YOUR OWN PENDANT/);
+      expect(element(by.repeater('offer in offers')).isPresent()).toBe(true);
     });
 
   });

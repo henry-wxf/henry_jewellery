@@ -29,3 +29,16 @@ background-color: #f2f2f2;
 .affix + .container-fluid {
   padding-top: 70px;
 }
+
+/* This is needed as mentioned on http://angular-ui.github.io/bootstrap/#getting_started */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.price_current{
+  color:#32e4e5;
+  display: inline;
+}
+
+.price_was{
+  text-decoration: line-through;
+  color:#444444;
+}

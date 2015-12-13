@@ -22,15 +22,11 @@ describe('Home module unit tests', function(){
           respond([
             {
                 "offerId": "1001",
-                "caption": "BUILD YOUR OWN PENDANT",
-                "imgUrl": "components/offer/img/1001.jpg",
-                "promotion": "Unmatched diamond selection makes classic diamond pendants anything but ordinary."
+                "description": "BUILD YOUR OWN PENDANT"
             },
             {
                 "offerId": "1002",
-                "caption": "BUILD YOUR OWN RING",
-                "imgUrl": "components/offer/img/1002.jpg",
-                "promotion": "Uniquely designed engagement rings custom crafted with certified diamonds."
+                "description": "BUILD YOUR OWN RING"
             }
           ]);
 
@@ -45,19 +41,17 @@ describe('Home module unit tests', function(){
 
       expect(scope.offers).toEqualData(
           [
-            {
-                "offerId": "1001",
-                "caption": "BUILD YOUR OWN PENDANT",
-                "imgUrl": "components/offer/img/1001.jpg",
-                "promotion": "Unmatched diamond selection makes classic diamond pendants anything but ordinary."
-            },
-            {
-                "offerId": "1002",
-                "caption": "BUILD YOUR OWN RING",
-                "imgUrl": "components/offer/img/1002.jpg",
-                "promotion": "Uniquely designed engagement rings custom crafted with certified diamonds."
-            }
+           {
+               "offerId": "1001",
+               "description": "BUILD YOUR OWN PENDANT"
+           },
+           {
+               "offerId": "1002",
+               "description": "BUILD YOUR OWN RING"
+           }
           ]);
+      expect(scope.myInterval).toEqual(5000);
+      expect(scope.noWrapSlides).toBe(false);
     });
 
   });

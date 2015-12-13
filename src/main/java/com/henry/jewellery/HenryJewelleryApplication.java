@@ -24,16 +24,13 @@ public class HenryJewelleryApplication {
     CommandLineRunner init(OfferRepository offerRepository, ProductRepository productRepository) {
         return (evt) -> 
         {
-            offerRepository.save(new Offer("1001", "BUILD YOUR OWN PENDANT", "img/product/1001.jpg", "Unmatched diamond selection makes classic diamond pendants anything but ordinary."));
-            offerRepository.save(new Offer("1002", "BUILD YOUR OWN RING", "img/product/1002.jpg", "Uniquely designed engagement rings custom crafted with certified diamonds."));
-            offerRepository.save(new Offer("1003", "BUILD YOUR OWN EARRINGS", "img/product/1003.jpg", "Make a big impression with perfectly matched diamonds in timeless custom earrings."));
-            offerRepository.save(new Offer("1004", "BUILD YOUR OWN PENDANT", "img/product/1004.jpg", "Unmatched diamond selection makes classic diamond pendants anything but ordinary."));
-            offerRepository.save(new Offer("1005", "BUILD YOUR OWN RING", "img/product/1005.jpg", "Buy 50 mobiles and get a gift card"));
-            offerRepository.save(new Offer("1006", "BUILD YOUR OWN PENDANT", "img/product/1006.jpg", "Unmatched diamond selection makes classic diamond pendants anything but ordinary."));
-            offerRepository.save(new Offer("1007", "BUILD YOUR OWN PENDANT", "img/product/1007.jpg", "Buy 50 mobiles and get a gift card"));
-            offerRepository.save(new Offer("1008", "BUILD YOUR OWN EARRINGS", "img/product/1008.jpg", "Unmatched diamond selection makes classic diamond pendants anything but ordinary."));
-            offerRepository.save(new Offer("1009", "BUILD YOUR OWN PENDANT", "img/product/1009.jpg", "Buy 50 mobiles and get a gift card"));
-            offerRepository.save(new Offer("1010", "BUILD YOUR OWN PENDANT", "img/product/1010.jpg", "Unmatched diamond selection makes classic diamond pendants anything but ordinary."));
+            Product spp1 = productRepository.save(new Product("ASSORTED_1011", ProductType.ASSORTED, "Freshwater Pearl Necklace Bracelet and Earrings Set", "img/product/special_1003.jpg", new BigDecimal(999.99), false));
+            Product spp2 = productRepository.save(new Product("ASSORTED_1012", ProductType.ASSORTED, "Sterling Silver Belcher Engraved Heart Padlock Bracelet", "img/product/special_1004.jpg", new BigDecimal(899.99), false));
+            Product spp3 = productRepository.save(new Product("ASSORTED_1013", ProductType.ASSORTED, "Diamond Cut Curb Gents 55cm Chain in 9ct Solid Gold", "img/product/special_1005.jpg", new BigDecimal(799.99), false));
+            
+            offerRepository.save(new Offer("Make a big impression with perfectly matched diamonds in timeless custom earrings.", new BigDecimal(666.66), spp1));
+            offerRepository.save(new Offer("Unmatched diamond selection makes classic diamond pendants anything but ordinary.", new BigDecimal(566.66), spp2));
+            offerRepository.save(new Offer("Make a big impression with perfectly matched diamonds in timeless custom earrings.", new BigDecimal(516.66), spp3));
             
             productRepository.save(new Product("ASSORTED_1001", ProductType.ASSORTED, "Freshwater Pearl Necklace Bracelet and Earrings Set", "img/product/assorted_1001.jpg", new BigDecimal(99.99)));
             productRepository.save(new Product("BRACELETS_1001", ProductType.BRACELETS, "Sterling Silver Belcher Engraved Heart Padlock Bracelet", "img/product/bracelet_1001.jpg", new BigDecimal(168.88)));
