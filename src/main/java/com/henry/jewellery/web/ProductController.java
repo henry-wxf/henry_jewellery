@@ -26,12 +26,12 @@ public class ProductController {
 
   @RequestMapping(method=RequestMethod.GET)
   public List<Product> getProducts() {
-      return repository.findByActiveTrue();
+      return repository.findBySpecialFalse();
   }
   
   @RequestMapping(method=RequestMethod.GET, params={"type"})
   public List<Product> getProducts(@RequestParam("type") ProductType productType) {
-      return repository.findByTypeAndActiveTrue(productType);
+      return repository.findByTypeAndSpecialFalse(productType);
   }
   
   @RequestMapping(value = "/{productId}", method = RequestMethod.GET)

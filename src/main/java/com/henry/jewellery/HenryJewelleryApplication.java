@@ -24,9 +24,9 @@ public class HenryJewelleryApplication {
     CommandLineRunner init(OfferRepository offerRepository, ProductRepository productRepository) {
         return (evt) -> 
         {
-            Product spp1 = productRepository.save(new Product("ASSORTED_1011", ProductType.ASSORTED, "Freshwater Pearl Necklace Bracelet and Earrings Set", "img/product/special_1003.jpg", new BigDecimal(999.99), false));
-            Product spp2 = productRepository.save(new Product("ASSORTED_1012", ProductType.ASSORTED, "Sterling Silver Belcher Engraved Heart Padlock Bracelet", "img/product/special_1004.jpg", new BigDecimal(899.99), false));
-            Product spp3 = productRepository.save(new Product("ASSORTED_1013", ProductType.ASSORTED, "Diamond Cut Curb Gents 55cm Chain in 9ct Solid Gold", "img/product/special_1005.jpg", new BigDecimal(799.99), false));
+            Product spp1 = productRepository.save(new Product("ASSORTED_1011", ProductType.ASSORTED, "Freshwater Pearl Necklace Bracelet and Earrings Set", "img/product/special_1003.jpg", new BigDecimal(999.99), true));
+            Product spp2 = productRepository.save(new Product("ASSORTED_1012", ProductType.ASSORTED, "Sterling Silver Belcher Engraved Heart Padlock Bracelet", "img/product/special_1004.jpg", new BigDecimal(899.99), true));
+            Product spp3 = productRepository.save(new Product("ASSORTED_1013", ProductType.ASSORTED, "Diamond Cut Curb Gents 55cm Chain in 9ct Solid Gold", "img/product/special_1005.jpg", new BigDecimal(799.99), true));
             
             offerRepository.save(new Offer("Make a big impression with perfectly matched diamonds in timeless custom earrings.", new BigDecimal(666.66), spp1));
             offerRepository.save(new Offer("Unmatched diamond selection makes classic diamond pendants anything but ordinary.", new BigDecimal(566.66), spp2));
