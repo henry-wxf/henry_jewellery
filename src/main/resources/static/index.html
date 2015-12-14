@@ -14,10 +14,14 @@
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-filter/angular-filter.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src='bower_components/lodash/lodash.js'></script>
+  <script src='bower_components/angular-simple-logger/dist/angular-simple-logger.js'></script>
+  <script src='bower_components/angular-google-maps/dist/angular-google-maps.js'></script>
   <script src="app.js"></script>
   <script src="home/home.js"></script>
   <script src="product/product.js"></script>
   <script src="deal/deal.js"></script>
+  <script src="store/store.js"></script>
   <script src="components/offer/offer_service.js"></script>
   <script src="components/product/product_service.js"></script>
 </head>
@@ -28,7 +32,7 @@
     <p>make you different</p>
   </div>
 </div>
-<nav class="navbar navbar-inverse" data-spy="affix"  data-offset="144">
+<nav class="navbar navbar-inverse" data-spy="affix"  data-offset="160">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -53,6 +57,7 @@
             </ul>
         </li>
         <li id="deals" ng-class="{active: activeMenuItem=='deals'}"><a href="#/deals" ng-click="changeMenuItem('deals')">Deals</a></li>
+        <li id="stores" ng-class="{active: activeMenuItem=='stores'}"><a href="#/stores" ng-click="changeMenuItem('stores')">Stores</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
@@ -61,7 +66,7 @@
     </div>
   </div>
 </nav>
-<div class="view-container">
+<div class="container-fluid">
   <div ng-view></div>
 </div>
 

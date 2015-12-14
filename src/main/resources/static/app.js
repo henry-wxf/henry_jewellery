@@ -5,7 +5,8 @@ angular.module('jewellery', [
   'ngRoute',
   'jewellery.home',
   'jewellery.product',
-  'jewellery.deal'
+  'jewellery.deal',
+  'jewellery.store'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
