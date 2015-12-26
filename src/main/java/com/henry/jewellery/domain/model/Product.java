@@ -1,4 +1,4 @@
-package com.henry.jewellery.domain;
+package com.henry.jewellery.domain.model;
 
 import java.math.BigDecimal;
 
@@ -15,7 +15,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="product_id")
-    private String productId;
+    private Long productId;
     
     private String name;
     
@@ -48,7 +48,7 @@ public class Product {
         this.special = special;
     }
 
-    public String getProductId() {
+    public Long getProductId() {
         return productId;
     }
 
@@ -81,5 +81,4 @@ public class Product {
         return "Product [productId=" + productId + ", name=" + name + ", type=" + type + ", description=" + description
                 + ", imgUrl=" + imgUrl + ", price=" + price + ", special=" + special + "]";
     }
-
 }

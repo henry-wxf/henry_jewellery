@@ -1,4 +1,4 @@
-package com.henry.jewellery.domain;
+package com.henry.jewellery.domain.model;
 
 public enum ProductType {
     ASSORTED,

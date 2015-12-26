@@ -8,27 +8,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.henry.jewellery.domain.Offer;
-import com.henry.jewellery.domain.OfferRepository;
+import com.henry.jewellery.domain.model.Offer;
+import com.henry.jewellery.service.OfferService;
 
 @RestController
 @RequestMapping("/offers")
 public class OfferController {
     
-  private final OfferRepository repository;
+  private final OfferService service;
 
   @Autowired
-  public OfferController(OfferRepository repository) {
-      this.repository = repository;
+  public OfferController(OfferService offerService) {
+      this.service = offerService;
   }
 
   @RequestMapping(method=RequestMethod.GET)
   public List<Offer> getOffers() {
-      return repository.findAll();
+      return service.getAllOffers();
   }
   
   @RequestMapping(value = "/{offerId}", method = RequestMethod.GET)
   public Offer getOffer(@PathVariable String offerId) {
-      return repository.findOne(offerId);
+      return service.getOfferById(offerId);
   }
 }

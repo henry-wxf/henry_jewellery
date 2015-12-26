@@ -9,34 +9,34 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.henry.jewellery.domain.Product;
-import com.henry.jewellery.domain.ProductRepository;
-import com.henry.jewellery.domain.ProductType;
+import com.henry.jewellery.domain.model.Product;
+import com.henry.jewellery.domain.model.ProductType;
+import com.henry.jewellery.service.ProductService;
 
 @RestController
 @RequestMapping("/products")
 public class ProductController {
     
-  private final ProductRepository repository;
+  private final ProductService service;
 
   @Autowired
-  public ProductController(ProductRepository repository) {
-      this.repository = repository;
+  public ProductController(ProductService productService) {
+      this.service = productService;
   }
 
   @RequestMapping(method=RequestMethod.GET)
   public List<Product> getProducts() {
-      return repository.findBySpecialFalse();
+      return service.getAllProducts();
   }
   
   @RequestMapping(method=RequestMethod.GET, params={"type"})
   public List<Product> getProducts(@RequestParam("type") ProductType productType) {
-      return repository.findByTypeAndSpecialFalse(productType);
+      return service.findProductsByType(productType);
   }
   
   @RequestMapping(value = "/{productId}", method = RequestMethod.GET)
   public Product getProduct(@PathVariable Long productId) {
-      return repository.findOne(productId);
+      return service.getProductById(productId);
   }
   @RequestMapping(value = "/types", method = RequestMethod.GET)
   public ProductType[] getProductTypes(){
