@@ -58,7 +58,8 @@ controller('NavCtrl', ['$route', '$rootScope', '$scope', '$http', '$location', '
                 $location.path("/myaccount");
                 $scope.error = false;
             } else {
-                $scope.error = msg;
+                $scope.error = true;
+                console.log(msg);
             }
         });
     };
@@ -72,7 +73,8 @@ controller('NavCtrl', ['$route', '$rootScope', '$scope', '$http', '$location', '
           },
           function(data) {
             $rootScope.authenticated = false;
-            $scope.error = data;
+            $scope.error = true;
+            console.log(data);
           }
        );
     };
