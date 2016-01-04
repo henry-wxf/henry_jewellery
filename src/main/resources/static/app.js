@@ -6,21 +6,74 @@ angular.module('jewellery', [
   'jewellery.home',
   'jewellery.product',
   'jewellery.deal',
-  'jewellery.store'
+  'jewellery.store',
+  'jewellery.account'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/home'});
+config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+    $routeProvider.when('/login', {
+        templateUrl: 'login.html',
+        controller: 'NavCtrl'
+    }).otherwise({redirectTo: '/home'});
+  
+    $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 }]).
-controller('NavCtrl', ['$scope', 'Product', function($scope, Product) {
-    $scope.activeMenuItem = "home";
+controller('NavCtrl', ['$route', '$rootScope', '$scope', '$http', '$location', 'Product', 'Account', 
+  function($route, $rootScope, $scope, $http, $location, Product, Account) {
+    
+    $scope.activeTab = function(route) {
+        return $route.current && route === $route.current.controller;
+    };
+    
     $scope.productTypes = Product.getTypes();
-    $scope.changeMenuItem = function(theItem){
-        $scope.activeMenuItem = theItem;
-        $scope.activeSubMenuItem = null;
-    }
     
     $scope.changeSubMenuItem = function(theItem){
-        $scope.activeMenuItem = "products"
         $scope.activeSubMenuItem = theItem;
-    }
+    };
+    
+    var authenticate = function(credentials, callback) {
+        var headers = credentials ? {authorization : "Basic "
+            + btoa(credentials.username + ":" + credentials.password)
+        } : {};
+        
+        var successCallback = function(data, responseHeaders) {
+            $rootScope.authenticated = true;
+            
+            callback && callback(true);
+        };
+        
+        var errorCallback = function(httpResponse) {
+            $rootScope.authenticated = false;
+            
+            callback && callback(false, httpResponse);
+        };
+        
+        Account(headers).auth(successCallback, errorCallback);
+    };
+
+    authenticate();
+    
+    $scope.signin = function() {
+        authenticate($scope.user, function(succ, msg) {
+            if(succ) {
+                $location.path("/myaccount");
+                $scope.error = false;
+            } else {
+                $scope.error = msg;
+            }
+        });
+    };
+    
+    $rootScope.signout = function() {
+        $http.post('/logout').then(
+          function() {
+            $rootScope.authenticated = false;
+            $location.path("/home");
+            $scope.error = false;
+          },
+          function(data) {
+            $rootScope.authenticated = false;
+            $scope.error = data;
+          }
+       );
+    };
 }]);

@@ -22,8 +22,10 @@
   <script src="product/product.js"></script>
   <script src="deal/deal.js"></script>
   <script src="store/store.js"></script>
+  <script src="account/account.js"></script>
   <script src="components/offer/offer_service.js"></script>
   <script src="components/product/product_service.js"></script>
+  <script src="components/account/account_service.js"></script>
 </head>
 <body>
 <div class="jumbotron">
@@ -44,8 +46,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" ng-controller="NavCtrl">
       <ul class="nav navbar-nav">
-        <li id="home" ng-class="{active: activeMenuItem=='home'}"><a href="#/home" ng-click="changeMenuItem('home')">Home</a></li>
-        <li id="products" ng-class="{dropdown: true, active: activeMenuItem=='products'}">
+        <li id="home" ng-class="{active: activeTab('HomeCtrl')}"><a href="#/home">Home</a></li>
+        <li id="products" ng-class="{dropdown: true, active: activeTab('ProductCtrl')}">
             <a class="dropdown-toggle" data-toggle="dropdown">Products<span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li ng-class="{active: activeSubMenuItem == 'ALL'}">
@@ -56,11 +58,17 @@
                 </li>
             </ul>
         </li>
-        <li id="deals" ng-class="{active: activeMenuItem=='deals'}"><a href="#/deals" ng-click="changeMenuItem('deals')">Deals</a></li>
-        <li id="stores" ng-class="{active: activeMenuItem=='stores'}"><a href="#/stores" ng-click="changeMenuItem('stores')">Stores</a></li>
+        <li id="deals" ng-show="authenticated" ng-class="{active: activeTab('DealCtrl')}"><a href="#/deals">Deals</a></li>
+        <li id="stores" ng-class="{active: activeTab('StoreCtrl')}"><a href="#/stores">Stores</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li ng-show="!authenticated" ng-class="{active: activeTab('NavCtrl')}">
+            <a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </li>
+        <li ng-show="authenticated" ng-class="{active: activeTab('AccountCtrl')}">
+            <a href="#/myaccount" ng-click="changeMenuItem('myaccount')"><span class="glyphicon glyphicon-user"></span> My Account</a>
+        </li>
+        <li ng-show="authenticated"><a href="" ng-click="signout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
       </ul>
     </div>
@@ -70,7 +78,7 @@
   <div ng-view></div>
 </div>
 
-<footer class="container-fluid text-center">
+<footer ng-show="!authenticated" class="container-fluid text-center">
   <p>--- Thank You for Visiting ---</p>  
   <form class="form-inline">Get deals:
     <input type="email" class="form-control" size="50" placeholder="Email Address">
